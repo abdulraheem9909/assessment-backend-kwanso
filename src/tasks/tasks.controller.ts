@@ -38,6 +38,11 @@ export class TasksController {
     return this.tasksService.update(id, updateTaskDto);
   }
 
+  @Delete('all')
+  removeAll() {
+    return this.tasksService.removeAll();
+  }
+
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.tasksService.remove(id);

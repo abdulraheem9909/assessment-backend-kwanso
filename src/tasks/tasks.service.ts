@@ -34,4 +34,7 @@ export class TasksService {
     }
     return this.prisma.task.delete({ where: { id } });
   }
+  async removeAll() {
+    return await this.prisma.task.deleteMany();
+  }
 }
