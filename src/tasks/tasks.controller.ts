@@ -47,4 +47,9 @@ export class TasksController {
   remove(@Param('id') id: string) {
     return this.tasksService.remove(id);
   }
+
+  @Post('bulkDelete')
+  removeBulk(@Body('ids') ids: string[]) {
+    return this.tasksService.removeBulk(ids);
+  }
 }

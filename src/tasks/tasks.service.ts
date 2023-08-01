@@ -37,4 +37,13 @@ export class TasksService {
   async removeAll() {
     return await this.prisma.task.deleteMany();
   }
+  async removeBulk(ids: string[]) {
+    return await this.prisma.task.deleteMany({
+      where: {
+        id: {
+          in: ids,
+        },
+      },
+    });
+  }
 }
